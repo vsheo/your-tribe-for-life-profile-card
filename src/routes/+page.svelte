@@ -6,10 +6,6 @@
 
 <h1>FDND Visitekaartje</h1>
 
-<!-- {#each members as member }
-    <a href="/{member.id}">{member.name} - {member.id}</a><br>  
-{/each} -->
-
 <article>
     <h2>Viresh Sheoratan</h2>
     <img src="" alt="profile picture van Viresh Sheoratan">

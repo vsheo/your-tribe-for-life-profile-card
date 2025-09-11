@@ -1,10 +1,8 @@
-// import { building } from '$app/environment';
-// import { setupMyDatabase } from '$lib/server/database';
+export async function load({url}) {
+	const membersResponse = await fetch(`https://fdnd.directus.app/items/person?fields=*`)
+	const membersData = await membersResponse.json()
 
-// if (!building) {
-// 	setupMyDatabase();
-// }
+	console.log(membersData)
 
-// export function load() {
-// 	// ...
-// }
+	return {members: membersData.data}
+}
