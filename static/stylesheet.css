@@ -16,9 +16,6 @@ body {
     --fs-section: clamp(2.5rem, calc(3vw + 1rem), 3rem);
     /* 32px */
     --fs-article: clamp(1.5rem, calc(1vw + 1rem), 2rem);
-
-    font-family: var(--f-family);
-    font-weight: var(--fw-regular);
 }
 
 /* ====================================================== COLOR PALETTES ====================================================== */

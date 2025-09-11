@@ -4,23 +4,15 @@
     const person = data.person;
 </script>
 
-<style>
-    body {
-        display: flex;
-        justify-content: center;
-        background-color: red;
-    }
-</style>
-
 <h1>FDND Visitekaartje</h1>
 
-<article>
+<article class="p-card">
     <h2>{person.name}</h2>
 
     <picture>
         <source type="image/avif" srcset="https://fdnd.directus.app/assets/{person.mugshot}?width=500&height=500&format=avif">
         <source type="image/webp" srcset="https://fdnd.directus.app/assets/{person.mugshot}?width=500&height=500&format=webp">
-        <img src="https://fdnd.directus.app/assets/{person.mugshot}?width=500&height=500" alt="profile picture van Viresh Sheoratan" width="500" height="500">
+        <img src="https://fdnd.directus.app/assets/{person.mugshot}?width=200&height=200" alt="profile picture van Viresh Sheoratan" width="200" height="200">
     </picture>
 
     <p>{person.bio}</p>
@@ -28,7 +20,7 @@
     <a href="{person.website}">I Love Web</a>
 </article>
 
-<section>
+<section class="options-container">
     <h3>Change The website!</h3>
 
     <fieldset class="change-theme">
