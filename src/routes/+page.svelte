@@ -1,17 +1,17 @@
 <script>
     let {data} = $props();
 
-    const members = data.members;
+    const person = data.person;
 </script>
 
 <h1>FDND Visitekaartje</h1>
 
 <article>
-    <h2>Viresh Sheoratan</h2>
-    <img src="" alt="profile picture van Viresh Sheoratan">
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-    <a href="/">Github</a>
-    <a href="/">I Love Web</a>
+    <h2>{person.name}</h2>
+    <img src="https://fdnd.directus.app/assets/{person.mugshot}?width=500&height=500&format=avif" alt="profile picture van Viresh Sheoratan">
+    <p>{person.bio}</p>
+    <a href="https://github.com/{person.github_handle}">Github</a>
+    <a href="{person.website}">I Love Web</a>
 </article>
 
 <section>

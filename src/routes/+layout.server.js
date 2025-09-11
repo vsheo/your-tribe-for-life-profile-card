@@ -1,8 +1,8 @@
 export async function load({url}) {
-	const membersResponse = await fetch(`https://fdnd.directus.app/items/person?fields=*`)
-	const membersData = await membersResponse.json()
+	const personResponse = await fetch(`https://fdnd.directus.app/items/person/167?fields=name,github_handle,website,bio,mugshot`)
+	const personData = await personResponse.json()
 
-	console.log(membersData)
+	console.log(personData)
 
-	return {members: membersData.data}
+	return {person: personData.data}
 }
