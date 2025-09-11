@@ -4,6 +4,14 @@
     const person = data.person;
 </script>
 
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        background-color: red;
+    }
+</style>
+
 <h1>FDND Visitekaartje</h1>
 
 <article>
