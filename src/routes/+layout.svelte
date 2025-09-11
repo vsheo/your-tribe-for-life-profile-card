@@ -14,6 +14,7 @@
 		padding: 0;
 		box-sizing: border-box;
 		object-fit: cover;
+		font-optical-sizing: auto;
 	}
 
 	/* ====================================================== GLOBAL ====================================================== */
@@ -26,7 +27,8 @@
 		/* 32px */
 		--fs-article: clamp(1.5rem, calc(1vw + 1rem), 2rem);
 
-		font-optical-sizing: auto;
+		font-family: var(--f-family);
+		font-weight: var(--fw-regular);
 	}
 
 	/* ====================================================== COLOR PALETTES ====================================================== */
@@ -52,8 +54,49 @@
 	}
 
 	/* ====================================================== TYPOGRAFIE FONTS ====================================================== */
+	@font-face {
+		font-family: 'PlayfairDisplay';
+		src: url('fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Labrada';
+		src: url('fonts/Labrada-Regular.ttf') format('truetype');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Asimovian';
+		src: url('fonts/Asimovian-Regular.ttf') format('truetype');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
 
 	/* ====================================================== TYPOGRAFIE CLASSES ====================================================== */
+	.font-1 {
+		--f-family: 'PlayfairDisplay';
+		--fw-regular: 400;
+		color: var(--text-primary);
+	}
+
+	.font-2 {
+		--f-family: 'Labrada';
+		--fw-regular: 400;
+		color: var(--text-primary);
+	}
+
+	.font-3 {
+		--f-family: 'Asimovian';
+		--fw-regular: 400;
+		color: var(--text-primary);
+	}
+
 	h1 {
 		font-family: var(--f-family);
 		font-weight: var(--fw-regular);
