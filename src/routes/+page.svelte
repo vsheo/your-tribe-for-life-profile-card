@@ -8,7 +8,13 @@
 
 <article>
     <h2>{person.name}</h2>
-    <img src="https://fdnd.directus.app/assets/{person.mugshot}?width=500&height=500&format=avif" alt="profile picture van Viresh Sheoratan">
+
+    <picture>
+        <source type="image/avif" srcset="https://fdnd.directus.app/assets/{person.mugshot}?width=500&height=500&format=avif">
+        <source type="image/webp" srcset="https://fdnd.directus.app/assets/{person.mugshot}?width=500&height=500&format=webp">
+        <img src="https://fdnd.directus.app/assets/{person.mugshot}?width=500&height=500" alt="profile picture van Viresh Sheoratan" width="500" height="500">
+    </picture>
+
     <p>{person.bio}</p>
     <a href="https://github.com/{person.github_handle}">Github</a>
     <a href="{person.website}">I Love Web</a>
