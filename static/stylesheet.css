@@ -11,9 +11,9 @@
 body {
     --fs-primary: 1rem;
     /* 64px */
-    --fs-title: clamp(2.5rem, calc(3vw + 1rem), 4rem);
+    --fs-title: clamp(2rem, calc(3vw + 1rem), 2.5rem);
     /* 48px */
-    --fs-section: clamp(2.5rem, calc(3vw + 1rem), 3rem);
+    --fs-section: clamp(1.5rem, calc(3.5vw + 1rem), 2rem);
     /* 32px */
     --fs-article: clamp(1.5rem, calc(1vw + 1rem), 2rem);
 }
