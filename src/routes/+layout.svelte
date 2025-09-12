@@ -106,11 +106,13 @@
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			/* justify-content: space-between; */
+			justify-content: space-between;
+			justify-self: center;
 			background-color: var(--bg-secondary);
 			margin: 1em 1.25em;
 			border-radius: 15px;
-			height: 7em;
+			height: 10em;
+			width: 12em;
 
 			legend {
 				text-align: center;
@@ -120,17 +122,26 @@
 
 			input {
 				position: absolute;
-				clip-path: inset(50%);
+				/* https://216digital.com/making-hidden-content-accessible-to-assistive-technologies/#:~:text=The%20Clip%20Pattern%3A%20A%20Better%20Approach */
+				clip: rect(0, 0, 0, 0);
 			}
 
 			label {
 				cursor: pointer;
-				/* margin: 0.3em 0; */
-			}
+				font-size: var(--fs-option);
 
-			&:hover label{
-				fill: var(--text-secondary);
-				color: var(--text-secondary);
+				&:first-of-type {
+					margin-top: 0.5em;
+				}
+
+				&:last-of-type {
+					margin-bottom: 0.5em;
+				}
+
+				&:hover{
+					fill: var(--text-secondary);
+					color: var(--text-secondary);
+				}
 			}
 		}
 	</style>
