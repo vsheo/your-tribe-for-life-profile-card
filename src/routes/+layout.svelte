@@ -30,7 +30,7 @@
 			background-color: var(--bg-secondary);
 			margin: 2em 1.25em;
 			border-radius: 15px;
-			max-width: 405px;
+			max-width: 25em;
 
 			h2 {
 				grid-column: 2/4;
@@ -78,18 +78,60 @@
 					grid-row: 3;
 				}
 
+				svg {
+					fill: var(--text-primary);
+				}
+
 				span {
-					color: var(--text-primary)
+					color: var(--text-primary);
+				}
+
+				&:hover svg, &:hover span{
+					fill: var(--text-secondary);
+					color: var(--text-secondary);
 				}
 			}
 		}
 
 		.options-container {
-			border: 2px solid red;
+			display: flex;
+			flex-direction: column;
+
+			h3 {
+				text-align: center;
+			}
 		}
 
 		fieldset {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			/* justify-content: space-between; */
 			background-color: var(--bg-secondary);
+			margin: 1em 1.25em;
+			border-radius: 15px;
+			height: 7em;
+
+			legend {
+				text-align: center;
+				border: none;
+				box-shadow: none;
+			}
+
+			input {
+				position: absolute;
+				clip-path: inset(50%);
+			}
+
+			label {
+				cursor: pointer;
+				/* margin: 0.3em 0; */
+			}
+
+			&:hover label{
+				fill: var(--text-secondary);
+				color: var(--text-secondary);
+			}
 		}
 	</style>
 </svelte:head>
