@@ -88,6 +88,7 @@
 				max-width: 50ch;
 				margin: 0 0.6em;
 				padding: 0 1em;
+				font-family: var(--f-family);
 			}
 
 			a {
@@ -114,6 +115,7 @@
 
 				span {
 					color: var(--text-primary);
+					font-family: var(--f-family);
 				}
 
 				&:hover svg, &:hover span{
@@ -164,6 +166,7 @@
 			label {
 				cursor: pointer;
 				font-size: var(--fs-option);
+				font-family: var(--f-family);
 
 				&:first-of-type {
 					margin-top: 0.5em;
