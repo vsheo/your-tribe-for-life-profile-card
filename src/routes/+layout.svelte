@@ -2,11 +2,10 @@
 	import favicon from '$lib/assets/favicon.svg';
 	let { children } = $props();
 
-	  import { onMount } from 'svelte';
-	  onMount(() => {
+	import { onMount } from 'svelte';
+	onMount(() => {
 		const body = document.querySelector('body')
-		const theme = document.querySelector('.change-theme')
-		const font = document.querySelector('.change-font')
+		const hiddenSection = document.querySelector('.options-container')
 
 		let oldTheme = 'palette-1'
 		let oldFont = 'font-1'
@@ -21,8 +20,6 @@
 			})
 		})
 
-		theme.removeAttribute('hidden')
-
 		document.querySelectorAll('.change-font input[name="font"]').forEach(radio => {
 			radio.addEventListener('change', () => {
 				let newFont = radio.id
@@ -32,9 +29,8 @@
 			})
 		})
 
-		font.removeAttribute('hidden')
-	  })
-
+		hiddenSection.style.removeProperty('display');
+	})
 </script>
 
 <svelte:head>

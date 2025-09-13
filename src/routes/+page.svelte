@@ -25,7 +25,7 @@
     </a>
 </article>
 
-<section class="options-container">
+<section class="options-container" style="display: none">
     <h3>Change The website!</h3>
 
     <form>
