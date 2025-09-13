@@ -1,36 +1,6 @@
 <script>
     let {data} = $props();
     const person = data.person;
-
-    // const body = document.querySelector('body')
-    // const theme = document.querySelector('.change-theme')
-    // const font = document.querySelector('.change-font')
-
-    // let oldTheme = 'palette-1'
-    // let oldFont = 'font-1'
-
-
-    // document.querySelectorAll('.change-theme input[name="palette"]').forEach(radio => {
-    //     radio.addEventListener('change', () => {
-    //         let newTheme = radio.id
-    //         body.classList.remove(oldTheme)
-    //         body.classList.add(newTheme)
-    //         oldTheme = newTheme
-    //     })
-    // })
-
-    // theme.removeAttribute('hidden')
-
-    // document.querySelectorAll('.change-font input[name="font"]').forEach(radio => {
-    //     radio.addEventListener('change', () => {
-    //         let newFont = radio.id
-    //         body.classList.remove(oldFont)
-    //         body.classList.add(newFont)
-    //         oldFont = newFont
-    //     })
-    // })
-
-    // font.removeAttribute('hidden')
 </script>
 
 <h1>FDND Visitekaartje</h1>
@@ -65,10 +35,10 @@
             <label for="palette-1">Theme 1</label>
 
             <input type="radio" id="palette-2" name="palette">
-            <label for="palette-2">theme 2</label>
+            <label for="palette-2">Theme 2</label>
 
             <input type="radio" id="palette-3" name="palette">
-            <label for="palette-3">theme 3</label>
+            <label for="palette-3">Theme 3</label>
         </fieldset>
     </form>
 
@@ -76,13 +46,13 @@
         <fieldset class="change-font">
             <legend>Change Font</legend>
             <input type="radio" id="font-1" name="font" checked>
-            <label for="font-1">font 1</label>
+            <label for="font-1">Font 1</label>
 
             <input type="radio" id="font-2" name="font">
-            <label for="font-2">font 2</label>
+            <label for="font-2">Font 2</label>
 
             <input type="radio" id="font-3" name="font">
-            <label for="font-3">font 3</label>
+            <label for="font-3">Font 3</label>
         </fieldset>
     </form>
 </section>
