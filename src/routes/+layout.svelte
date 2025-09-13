@@ -56,6 +56,7 @@
 			display: grid;
 			grid-template-columns: min-content 1fr 1fr;
 			grid-template-rows: min-content 1fr min-content;
+			align-self: center;
 			background-color: var(--bg-secondary);
 			margin: 2em 1.25em;
 			border-radius: 15px;
@@ -123,11 +124,17 @@
 		}
 
 		.options-container {
-			display: flex;
-			flex-direction: column;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			grid-template-rows: min-content min-content;
+
+			@media (min-width: 600px) {
+				grid-template-columns: repeat(2, minmax(300px, 1fr));
+			}
 
 			h3 {
 				text-align: center;
+				grid-column: 1/-1;
 			}
 		}
 
@@ -138,15 +145,14 @@
 			justify-content: space-between;
 			justify-self: center;
 			background-color: var(--bg-secondary);
+			border: 2px solid;
 			margin: 1em 1.25em;
 			border-radius: 15px;
-			height: 10em;
-			width: 12em;
+			height: clamp(8em, 20vw, 10em);
+			width: clamp(12em, 50vw, 15em);
 
 			legend {
 				text-align: center;
-				border: none;
-				box-shadow: none;
 			}
 
 			input {
