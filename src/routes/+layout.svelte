@@ -91,7 +91,8 @@
 
 	h1 {
 		text-align: center;
-		margin: 0 1em;
+		margin: 0.5em 1em;
+		line-height: 2rem;
 	}
 
 	.p-card {
@@ -109,6 +110,7 @@
 			grid-row: 1;
 			align-self: center;
 			margin-right: 0.4em;
+			line-height: 1.5rem;
 		}
 
 		picture {
