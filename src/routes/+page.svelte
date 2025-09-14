@@ -32,7 +32,7 @@
         <fieldset class="change-theme">
             <legend>Change Theme</legend>
             <input type="radio" id="palette-1" name="palette" checked>
-            <label for="palette-1">Theme 1</label>
+            <label for="palette-1" class="active">Theme 1</label>
 
             <input type="radio" id="palette-2" name="palette">
             <label for="palette-2">Theme 2</label>
@@ -46,7 +46,7 @@
         <fieldset class="change-font">
             <legend>Change Font</legend>
             <input type="radio" id="font-1" name="font" checked>
-            <label for="font-1">Font 1</label>
+            <label for="font-1" class="active">Font 1</label>
 
             <input type="radio" id="font-2" name="font">
             <label for="font-2">Font 2</label>
