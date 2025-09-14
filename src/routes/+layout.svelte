@@ -11,37 +11,62 @@
 		let oldFont = 'font-1'
 
 
-		document.querySelectorAll('.change-theme input[name="palette"]').forEach(radio => {
+		// document.querySelectorAll('.change-theme input[name="palette"]').forEach(radio => {
+		// 	radio.addEventListener('change', (e) => {
+		// 		let newTheme = radio.id
+		// 		body.classList.remove(oldTheme)
+		// 		body.classList.add(newTheme)
+		// 		oldTheme = newTheme
+		// 		// remove old active
+		// 		document.querySelectorAll('.change-theme label').forEach(label => {
+		// 			label.classList.remove('active');
+		// 		});
+		// 		// add active state
+		// 		console.log(e.target.id)
+		// 		document.querySelector(`label[for="${e.target.id}"]`).classList.add('active')
+		// 	})
+		// })
+
+		// document.querySelectorAll('.change-font input[name="font"]').forEach(radio => {
+		// 	radio.addEventListener('change', (e) => {
+		// 		let newFont = radio.id
+		// 		body.classList.remove(oldFont)
+		// 		body.classList.add(newFont)
+		// 		oldFont = newFont
+		// 		// remove old active
+		// 		document.querySelectorAll('.change-font label').forEach(label => {
+		// 			label.classList.remove('active');
+		// 		});
+		// 		// add active state
+		// 		console.log(e.target.id)
+		// 		document.querySelector(`label[for="${e.target.id}"]`).classList.add('active')
+		// 	})
+		// })
+
+
+		document.querySelectorAll('input').forEach(radio => {
 			radio.addEventListener('change', (e) => {
-				let newTheme = radio.id
-				body.classList.remove(oldTheme)
-				body.classList.add(newTheme)
-				oldTheme = newTheme
+				const newValue = e.target.id
+				// remove old theme or font
+				if (newValue.includes('palette')){
+					body.classList.remove(oldTheme)
+					body.classList.add(newValue)
+					oldTheme = newValue
+				} else if (newValue.includes('font')) {
+					body.classList.remove(oldFont)
+					body.classList.add(newValue)
+					oldFont = newValue
+				}
+				console.log(`label[for=${e.target.id}]`)
 				// remove old active
-				document.querySelectorAll('.change-theme label').forEach(label => {
-					label.classList.remove('active');
+				document.querySelectorAll(`label[for=${e.target.id}]`).forEach(label => {
+					label.classList.remove('active')
 				});
 				// add active state
-				console.log(e.target.id)
 				document.querySelector(`label[for="${e.target.id}"]`).classList.add('active')
 			})
 		})
 
-		document.querySelectorAll('.change-font input[name="font"]').forEach(radio => {
-			radio.addEventListener('change', (e) => {
-				let newFont = radio.id
-				body.classList.remove(oldFont)
-				body.classList.add(newFont)
-				oldFont = newFont
-				// remove old active
-				document.querySelectorAll('.change-font label').forEach(label => {
-					label.classList.remove('active');
-				});
-				// add active state
-				console.log(e.target.id)
-				document.querySelector(`label[for="${e.target.id}"]`).classList.add('active')
-			})
-		})
 
 		hiddenSection.style.removeProperty('display');
 	})
