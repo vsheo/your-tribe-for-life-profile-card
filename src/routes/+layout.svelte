@@ -6,6 +6,7 @@
 	onMount(() => {
 		const body = document.querySelector('body')
 		const hiddenSection = document.querySelector('.options-container')
+		const bounceField = document.querySelectorAll('fieldset')
 
 		let oldTheme = 'palette-1'
 		let oldFont = 'font-1'
@@ -20,9 +21,9 @@
 					body.classList.add(newValue)
 
 					// theme transition animation
-					body.classList.add('theme-transition')
+					body.classList.add('animation-theme-transition')
 					// remove class after animation
-					setTimeout(() => document.body.classList.remove('theme-transition'), 500);
+					setTimeout(() => document.body.classList.remove('animation-theme-transition'), 500);
 
 					// remove old active
 					document.querySelector(`label[for=${oldTheme}]`).classList.remove('active')
@@ -38,6 +39,12 @@
 				}
 				// add active state
 				document.querySelector(`label[for="${e.target.id}"]`).classList.add('active')
+			})
+		})
+
+		bounceField.forEach(field => {
+			field.addEventListener('click', () => {
+				field.classList.add('animation-gelatine-bounce')
 			})
 		})
 
@@ -58,13 +65,35 @@
 		}
 	}
 
-		@keyframes animation-mask-shrink {
+	@keyframes animation-mask-shrink {
 		from {
 			mask-position: 100% 0;
 		}
 		to {
 			mask-position: 0 0;
 		}
+	}
+
+	@keyframes gelatine {
+		from, to {
+			transform: scale(1, 1);
+		}
+		25% { transform: scale(0.9, 1.1);
+		}
+		50% { transform: scale(1.1, 0.9);
+		}
+		75% { transform: scale(0.95, 1.05);
+		}
+	}
+
+	/* change color animation */
+	.animation-theme-transition {
+		animation: animation-mask-grow 0.5s steps(22) forwards;
+	}
+
+	/* fieldset bounce animation */
+	.animation-gelatine-bounce {
+		animation: gelatine 1s infinite;
 	}
 
 	body {
@@ -82,11 +111,6 @@
 		mask-size: 2300% 100%;
 		mask-repeat: no-repeat;
 		animation: animation-mask-shrink 1s steps(22) forwards;
-	}
-	
-	/* change color animation */
-	.theme-transition {
-		animation: animation-mask-grow 0.5s steps(22) forwards;
 	}
 
 	h1 {
