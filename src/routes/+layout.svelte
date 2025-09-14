@@ -42,11 +42,13 @@
 			})
 		})
 
-		// https://developer.mozilla.org/en-US/docs/Web/API/Document/hasFocus
-
 		bounceField.forEach(field => {
-			field.addEventListener('change', (e) => {
-				setTimeout(() => field.classList.add('animation-gelatine-bounce'), 5000);
+			field.addEventListener('change', () => {
+				// remove animation class for both fields
+				bounceField.forEach(ani => ani.classList.remove('animation-gelatine-bounce'))
+
+				// after 10s bounce animation
+				bounceField.forEach(ani => setTimeout(() => ani.classList.add('animation-gelatine-bounce'), 10000))
 			})
 		})
 
@@ -95,7 +97,8 @@
 
 	/* fieldset bounce animation */
 	.animation-gelatine-bounce {
-		animation: gelatine 1s infinite;
+		animation: gelatine 1s 3;
+		animation-delay: 10s;
 	}
 
 	body {

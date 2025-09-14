@@ -29,7 +29,7 @@
     <h3>Change The website!</h3>
 
     <form>
-        <fieldset class="change-theme">
+        <fieldset class="change-theme animation-gelatine-bounce">
             <legend>Change Theme</legend>
             <input type="radio" id="palette-1" name="palette" checked>
             <label for="palette-1" class="active">Theme 1</label>
@@ -43,7 +43,7 @@
     </form>
 
     <form>
-        <fieldset class="change-font">
+        <fieldset class="change-font animation-gelatine-bounce">
             <legend>Change Font</legend>
             <input type="radio" id="font-1" name="font" checked>
             <label for="font-1" class="active">Font 1</label>
