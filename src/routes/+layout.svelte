@@ -51,17 +51,18 @@
 				if (newValue.includes('palette')){
 					body.classList.remove(oldTheme)
 					body.classList.add(newValue)
+					// remove old active
+					document.querySelector(`label[for=${oldTheme}]`).classList.remove('active')
 					oldTheme = newValue
 				} else if (newValue.includes('font')) {
 					body.classList.remove(oldFont)
 					body.classList.add(newValue)
+					// remove old active
+					document.querySelector(`label[for=${oldFont}]`).classList.remove('active')
 					oldFont = newValue
 				}
 				console.log(`label[for=${e.target.id}]`)
-				// remove old active
-				document.querySelectorAll(`label[for=${e.target.id}]`).forEach(label => {
-					label.classList.remove('active')
-				});
+
 				// add active state
 				document.querySelector(`label[for="${e.target.id}"]`).classList.add('active')
 			})
