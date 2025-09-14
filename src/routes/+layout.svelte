@@ -21,15 +21,17 @@
 
 					// theme transition animation
 					body.classList.add('theme-transition')
-					// remove class na animation
-					setTimeout(() => document.body.classList.remove('theme-transition'), 1000);
+					// remove class after animation
+					setTimeout(() => document.body.classList.remove('theme-transition'), 500);
 
 					// remove old active
 					document.querySelector(`label[for=${oldTheme}]`).classList.remove('active')
 					oldTheme = newValue
+
 				} else if (newValue.includes('font')) {
 					body.classList.remove(oldFont)
 					body.classList.add(newValue)
+
 					// remove old active
 					document.querySelector(`label[for=${oldFont}]`).classList.remove('active')
 					oldFont = newValue
@@ -72,19 +74,18 @@
 		font-family: var(--f-family);
 		font-weight: var(--fw-regular);
 		background-color: var(--bg-primary);
-		transition: background-color 1s ease;
 
 		/* background transition */
+		transition: background-color 0.5s ease;
 		mask-image: url("/images/mask-img.png");
 		mask-size: 2300% 100%;
 		mask-repeat: no-repeat;
 		animation: ani2 1s steps(22) forwards;
 	}
 	
-	/* change color animatie */
+	/* change color animation */
 	.theme-transition {
-		animation: ani 1s steps(22) forwards;
-		background-color: var(--bg-primary)
+		animation: ani 0.5s steps(22) forwards;
 	}
 
 	h1 {
