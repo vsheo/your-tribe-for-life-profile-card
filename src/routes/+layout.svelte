@@ -10,40 +10,6 @@
 		let oldTheme = 'palette-1'
 		let oldFont = 'font-1'
 
-
-		// document.querySelectorAll('.change-theme input[name="palette"]').forEach(radio => {
-		// 	radio.addEventListener('change', (e) => {
-		// 		let newTheme = radio.id
-		// 		body.classList.remove(oldTheme)
-		// 		body.classList.add(newTheme)
-		// 		oldTheme = newTheme
-		// 		// remove old active
-		// 		document.querySelectorAll('.change-theme label').forEach(label => {
-		// 			label.classList.remove('active');
-		// 		});
-		// 		// add active state
-		// 		console.log(e.target.id)
-		// 		document.querySelector(`label[for="${e.target.id}"]`).classList.add('active')
-		// 	})
-		// })
-
-		// document.querySelectorAll('.change-font input[name="font"]').forEach(radio => {
-		// 	radio.addEventListener('change', (e) => {
-		// 		let newFont = radio.id
-		// 		body.classList.remove(oldFont)
-		// 		body.classList.add(newFont)
-		// 		oldFont = newFont
-		// 		// remove old active
-		// 		document.querySelectorAll('.change-font label').forEach(label => {
-		// 			label.classList.remove('active');
-		// 		});
-		// 		// add active state
-		// 		console.log(e.target.id)
-		// 		document.querySelector(`label[for="${e.target.id}"]`).classList.add('active')
-		// 	})
-		// })
-
-
 		document.querySelectorAll('input').forEach(radio => {
 			radio.addEventListener('change', (e) => {
 				const newValue = e.target.id
@@ -61,13 +27,10 @@
 					document.querySelector(`label[for=${oldFont}]`).classList.remove('active')
 					oldFont = newValue
 				}
-				console.log(`label[for=${e.target.id}]`)
-
 				// add active state
 				document.querySelector(`label[for="${e.target.id}"]`).classList.add('active')
 			})
 		})
-
 
 		hiddenSection.style.removeProperty('display');
 	})
