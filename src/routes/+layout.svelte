@@ -42,9 +42,11 @@
 			})
 		})
 
+		// https://developer.mozilla.org/en-US/docs/Web/API/Document/hasFocus
+
 		bounceField.forEach(field => {
-			field.addEventListener('click', () => {
-				field.classList.add('animation-gelatine-bounce')
+			field.addEventListener('change', (e) => {
+				setTimeout(() => field.classList.add('animation-gelatine-bounce'), 5000);
 			})
 		})
 
