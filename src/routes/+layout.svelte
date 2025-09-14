@@ -49,7 +49,7 @@
 	<link rel="icon" href={favicon} />
 
 	<style>
-	@keyframes ani {
+	@keyframes animation-mask-grow {
 		from {
 			mask-position: 0 0;
 		}
@@ -58,7 +58,7 @@
 		}
 	}
 
-		@keyframes ani2 {
+		@keyframes animation-mask-shrink {
 		from {
 			mask-position: 100% 0;
 		}
@@ -73,6 +73,7 @@
 
 		font-family: var(--f-family);
 		font-weight: var(--fw-regular);
+		line-height: var(--lh-primary);
 		background-color: var(--bg-primary);
 
 		/* background transition */
@@ -80,12 +81,12 @@
 		mask-image: url("/images/mask-img.png");
 		mask-size: 2300% 100%;
 		mask-repeat: no-repeat;
-		animation: ani2 1s steps(22) forwards;
+		animation: animation-mask-shrink 1s steps(22) forwards;
 	}
 	
 	/* change color animation */
 	.theme-transition {
-		animation: ani 0.5s steps(22) forwards;
+		animation: animation-mask-grow 0.5s steps(22) forwards;
 	}
 
 	h1 {
