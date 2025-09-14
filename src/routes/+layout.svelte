@@ -15,8 +15,15 @@
 				const newValue = e.target.id
 				// remove old theme or font
 				if (newValue.includes('palette')){
+					// change theme
 					body.classList.remove(oldTheme)
 					body.classList.add(newValue)
+
+					// theme transition animation
+					body.classList.add('theme-transition')
+					// remove class na animation
+					setTimeout(() => document.body.classList.remove('theme-transition'), 1000);
+
 					// remove old active
 					document.querySelector(`label[for=${oldTheme}]`).classList.remove('active')
 					oldTheme = newValue
@@ -75,7 +82,7 @@
 	}
 	
 	/* change color animatie */
-	body:has(.change-theme label:active) {
+	.theme-transition {
 		animation: ani 1s steps(22) forwards;
 		background-color: var(--bg-primary)
 	}
