@@ -115,7 +115,7 @@
 		mask-image: url("/images/mask-img.png");
 		mask-size: 2300% 100%;
 		mask-repeat: no-repeat;
-		animation: animation-mask-shrink 1s steps(22) forwards;
+		animation: animation-mask-shrink 0.5s steps(22) forwards;
 	}
 
 	h1 {
