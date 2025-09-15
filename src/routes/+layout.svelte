@@ -218,7 +218,7 @@
 	}
 
 	form {
-		place-content: center;
+		place-self: center;
 	}
 
 	fieldset {
