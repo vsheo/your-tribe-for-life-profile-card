@@ -195,6 +195,10 @@
 				fill: var(--text-secondary);
 				color: var(--text-secondary);
 			}
+
+			&:focus-visible {
+				outline: 3px dashed var(--text-secondary);
+			}
 		}
 	}
 
@@ -225,6 +229,10 @@
 		border-radius: 15px;
 		height: clamp(8em, 20vw, 10em);
 		width: clamp(12em, 50vw, 15em);
+
+		&:focus-within {
+			border: 3px dashed var(--text-secondary);
+		}
 
 		legend {
 			text-align: center;
