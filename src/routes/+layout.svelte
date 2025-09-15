@@ -23,7 +23,7 @@
 					// theme transition animation
 					body.classList.add('animation-theme-transition')
 					// remove class after animation
-					setTimeout(() => document.body.classList.remove('animation-theme-transition'), 500);
+					setTimeout(() => document.body.classList.remove('animation-theme-transition'), 500)
 
 					// remove old active
 					document.querySelector(`label[for=${oldTheme}]`).classList.remove('active')
@@ -206,6 +206,7 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		grid-template-rows: min-content min-content;
+		place-content: center;
 
 		@media (min-width: 600px) {
 			grid-template-columns: repeat(2, minmax(300px, 1fr));
