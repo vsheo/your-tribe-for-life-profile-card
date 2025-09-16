@@ -27,20 +27,16 @@
 					// remove class after animation
 					setTimeout(() => document.body.classList.remove('animation-theme-transition'), 500)
 
-					// remove old active
-					document.querySelector(`label[for=${oldTheme}]`).classList.remove('active')
+                    // update the oldTheme
 					oldTheme = newValue
 
 				} else if (newValue.includes('font')) {
 					body.classList.remove(oldFont)
 					body.classList.add(newValue)
 
-					// remove old active
-					document.querySelector(`label[for=${oldFont}]`).classList.remove('active')
+                    // update the oldFont
 					oldFont = newValue
 				}
-				// add active state
-				document.querySelector(`label[for="${e.target.id}"]`).classList.add('active')
 			})
 		})
 
@@ -62,8 +58,8 @@
     <fieldset class="change-theme animation-gelatine-bounce">
         <legend>Change Theme</legend>
         {#each fields as field, i }
-            <input type="radio" id={field.id} name="{change.type}">
-            <label for={field.id} class="active">{field.id}</label>
+            <input type="radio" id={field.id} name="{change.type}" checked={i === 0}>
+            <label for={field.id}>{field.id}</label>
         {/each}
     </fieldset>
 </form>
@@ -94,6 +90,10 @@ fieldset {
         position: absolute;
         /* https://216digital.com/making-hidden-content-accessible-to-assistive-technologies/#:~:text=The%20Clip%20Pattern%3A%20A%20Better%20Approach */
         clip: rect(0, 0, 0, 0);
+
+        &:checked + label {
+            color: var(--text-secondary);
+        }
     }
 
     label {
@@ -113,10 +113,6 @@ fieldset {
             fill: var(--text-secondary);
             color: var(--text-secondary);
         }
-    }
-
-    .active {
-        color: var(--text-secondary);
     }
 }
 </style>
