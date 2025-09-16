@@ -1,4 +1,9 @@
 <script>
+    let {themes} = $props()
+    // const Ids = field.id
+    // console.log(themes[0])
+
+
     import { onMount } from 'svelte';
 	onMount(() => {
 		const body = document.querySelector('body')
@@ -56,6 +61,16 @@
 <form>
     <fieldset class="change-theme animation-gelatine-bounce">
         <legend>Change Theme</legend>
+        {#each themes as theme, i }
+            <input type="radio" id={theme.id} name="palette" checked>
+            <label for={theme.id} class="active">theme {i + 1}</label>
+        {/each}
+    </fieldset>
+</form>
+
+<!-- <form>
+    <fieldset class="change-theme animation-gelatine-bounce">
+        <legend>Change Theme</legend>
         <input type="radio" id="palette-1" name="palette" checked>
         <label for="palette-1" class="active">Theme 1</label>
 
@@ -79,7 +94,7 @@
         <input type="radio" id="font-3" name="font">
         <label for="font-3">Font 3</label>
     </fieldset>
-</form>
+</form> -->
 
 <style>
 fieldset {

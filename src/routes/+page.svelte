@@ -1,12 +1,18 @@
 <script>
-    import IlwLogo from '$lib/assets/ilw-logo.svelte';
+    import IlwLogo from '$lib/assets/ilw-logo.svelte'
+    import Fields from '$lib/assets/ChangeOptions.json'
+    console.log(Fields.change.fonts)
+
+    let themes = Fields.change.themes
+    let fonts = Fields.change.fonts
+
 
     import { Githublogo } from '$lib'
     import { Ilwlogo } from '$lib'
     import { Fieldset } from '$lib'
 
-    let {data} = $props();
-    const person = data.person;
+    let {data} = $props()
+    const person = data.person
 </script>
 
 <article class="p-card">
@@ -32,7 +38,12 @@
 <section class="options-container" style="display: none">
     <h3>Change The Page!</h3>
 
-    <Fieldset />
+    <!-- {#each Fields.change as field}
+        <Fieldset {field}/>
+    {/each} -->
+
+    <Fieldset {themes}/>
+    <!-- <Fieldset {fonts}/> -->
 </section>
 
 

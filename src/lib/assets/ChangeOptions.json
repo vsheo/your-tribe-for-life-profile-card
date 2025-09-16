@@ -1,0 +1,14 @@
+{
+  "change": {
+    "themes": [
+      { "id": "palette-1" },
+      { "id": "palette-2" },
+      { "id": "palette-3" }
+    ],
+    "fonts": [
+      { "id": "font-1" },
+      { "id": "font-2" },
+      { "id": "font-3" }
+    ]
+  }
+}
