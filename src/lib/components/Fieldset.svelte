@@ -1,8 +1,8 @@
 <script>
-    let {themes} = $props()
-    // const Ids = field.id
-    // console.log(themes[0])
-
+    let {change} = $props()
+    // console.log(change)
+    // console.log(change.fields)
+    let fields = change.fields
 
     import { onMount } from 'svelte';
 	onMount(() => {
@@ -61,40 +61,12 @@
 <form>
     <fieldset class="change-theme animation-gelatine-bounce">
         <legend>Change Theme</legend>
-        {#each themes as theme, i }
-            <input type="radio" id={theme.id} name="palette" checked>
-            <label for={theme.id} class="active">theme {i + 1}</label>
+        {#each fields as field, i }
+            <input type="radio" id={field.id} name="{change.type}">
+            <label for={field.id} class="active">{field.id}</label>
         {/each}
     </fieldset>
 </form>
-
-<!-- <form>
-    <fieldset class="change-theme animation-gelatine-bounce">
-        <legend>Change Theme</legend>
-        <input type="radio" id="palette-1" name="palette" checked>
-        <label for="palette-1" class="active">Theme 1</label>
-
-        <input type="radio" id="palette-2" name="palette">
-        <label for="palette-2">Theme 2</label>
-
-        <input type="radio" id="palette-3" name="palette">
-        <label for="palette-3">Theme 3</label>
-    </fieldset>
-</form>
-
-<form>
-    <fieldset class="change-font animation-gelatine-bounce">
-        <legend>Change Font</legend>
-        <input type="radio" id="font-1" name="font" checked>
-        <label for="font-1" class="active">Font 1</label>
-
-        <input type="radio" id="font-2" name="font">
-        <label for="font-2">Font 2</label>
-
-        <input type="radio" id="font-3" name="font">
-        <label for="font-3">Font 3</label>
-    </fieldset>
-</form> -->
 
 <style>
 fieldset {

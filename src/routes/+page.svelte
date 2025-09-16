@@ -1,7 +1,9 @@
 <script>
     import IlwLogo from '$lib/assets/ilw-logo.svelte'
     import Fields from '$lib/assets/ChangeOptions.json'
-    console.log(Fields.change.fonts)
+    // console.log(Fields.change)
+
+    let ChangeOptions = Fields.change
 
     let themes = Fields.change.themes
     let fonts = Fields.change.fonts
@@ -38,12 +40,9 @@
 <section class="options-container" style="display: none">
     <h3>Change The Page!</h3>
 
-    <!-- {#each Fields.change as field}
-        <Fieldset {field}/>
-    {/each} -->
-
-    <Fieldset {themes}/>
-    <!-- <Fieldset {fonts}/> -->
+    {#each ChangeOptions as change}
+        <Fieldset {change}/>
+    {/each}
 </section>
 
 

@@ -1,14 +1,20 @@
 {
-  "change": {
-    "themes": [
-      { "id": "palette-1" },
-      { "id": "palette-2" },
-      { "id": "palette-3" }
-    ],
-    "fonts": [
-      { "id": "font-1" },
-      { "id": "font-2" },
-      { "id": "font-3" }
-    ]
-  }
+  "change": [
+    {
+      "type": "palette",
+      "fields": [
+        { "id": "palette-1" },
+        { "id": "palette-2" },
+        { "id": "palette-3" }
+      ]
+    },
+    {
+      "type": "font",
+      "fields": [
+        { "id": "font-1" },
+        { "id": "font-2" },
+        { "id": "font-3" }
+      ]
+    }
+  ]
 }
