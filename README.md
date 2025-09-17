@@ -8,6 +8,7 @@
   * [Kenmerken](#kenmerken)
   * [Code conventies](#Code-conventies)
   * [Installatie](#installatie)
+  * [Uitleg van code](#Uitleg-van-code)
   * [Bronnen](#bronnen)
   * [Licentie](#licentie)
 
@@ -89,6 +90,15 @@ Hier moet je dan eerst ```npm install``` uitvoeren in de terminal.
 
 als dat af is kan je het project op localhost opstarten met:
 ```npm run dev```
+
+
+## Uitleg van code in wiki
+- Responsiveness
+- Styleguide
+- Component: Fieldset
+  - Change color & fonts
+  - Color transition animation
+- Data ophalen
 
 
 ## Bronnen
