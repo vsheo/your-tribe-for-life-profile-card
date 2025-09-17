@@ -75,7 +75,7 @@ fieldset {
     border: 2px solid;
     margin: 1em 1.25em;
     border-radius: 15px;
-    height: clamp(8em, 20vw, 10em);
+    height: clamp(9em, 20vw, 10em);
     width: clamp(12em, 50vw, 15em);
 
     &:focus-within {
@@ -106,7 +106,7 @@ fieldset {
         }
 
         &:last-of-type {
-            margin-bottom: 0.5em;
+            margin-bottom: 0.7em;
         }
 
         &:hover{
