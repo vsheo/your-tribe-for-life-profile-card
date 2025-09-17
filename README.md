@@ -6,6 +6,7 @@
   * [Beschrijving](#beschrijving)
   * [Gebruik](#gebruik)
   * [Kenmerken](#kenmerken)
+  * [Code conventies](#Code-conventies)
   * [Installatie](#installatie)
   * [Bronnen](#bronnen)
   * [Licentie](#licentie)
@@ -47,6 +48,33 @@ De CSS staat in de bijbehorende bestanden:
 
 ### JavaScript
 JavaScript heb ik alleen gebruikt voor het veranderen van kleuren en fonts, en dit staat in het component zelf geschreven. Wanneer JavaScript uitstaat, worden de fieldsets niet weergegeven.
+
+
+## Code conventies
+### naamgeving
+- Namen zijn zo kort mogelijk, maar nog steeds beschrijvend waarvoor het bedoeld is
+  - bijvoorbeeld: dit is voor de primary font size `--fs-primary`
+- Voor CSS gebruik ik kebak case (een streep na elk woord)
+- Voor JavaScript gebruik ik camelCase (elk nieuw woord met een hoofdletter)
+- Voor componenten gebruik ik eerste letter van het woord een hoofdletter
+
+### HTML
+- In HTML worden block elementen als blok geschreven
+  - block elementen hebben een lege regel erboven en eronder
+  - voorbeeld: https://github.com/vsheo/your-tribe-for-life-profile-card/blob/b3e1a4b4e5996045cecf43c64a00271e27ac5851/src/lib/components/Fieldset.svelte#L57-L65
+- inline elementen blijven op 1 regel
+  - voorbeeld: https://github.com/vsheo/your-tribe-for-life-profile-card/blob/b3e1a4b4e5996045cecf43c64a00271e27ac5851/src/routes/%2Bpage.svelte#L29
+
+### CSS
+- CSS selectors hebben dezelfde volgorde als de HTML structuur
+- als het HTML element een block element is, dan zijn alle children in CSS genest
+  - voorbeeld: https://github.com/vsheo/your-tribe-for-life-profile-card/blob/b3e1a4b4e5996045cecf43c64a00271e27ac5851/src/routes/%2Bpage.svelte#L43-L119
+- als een element een speudo class heeft, dan wordt deze bij het element genest
+  - voorbeeld: https://github.com/vsheo/your-tribe-for-life-profile-card/blob/b3e1a4b4e5996045cecf43c64a00271e27ac5851/src/lib/components/Fieldset.svelte#L99-L116
+- nesten in CSS gaat niet verder dan 3 niveaus diep
+
+
+
 
 
 ## Installatie
