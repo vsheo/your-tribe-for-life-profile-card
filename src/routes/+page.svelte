@@ -8,7 +8,6 @@
     let themes = Fields.change.themes
     let fonts = Fields.change.fonts
 
-
     import { Githublogo } from '$lib'
     import { Ilwlogo } from '$lib'
     import { Fieldset } from '$lib'
@@ -27,14 +26,8 @@
     </picture>
 
     <p>{person.bio}</p>
-    <a href="https://github.com/{person.github_handle}">
-        <Githublogo />
-        <span>Github</span>
-    </a>
-    <a href="{person.website}">
-        <IlwLogo />
-        <span>I Love Web</span>
-    </a>
+    <a href="https://github.com/{person.github_handle}"><Githublogo /><span>Github</span></a>
+    <a href="{person.website}"><IlwLogo /><span>I Love Web</span></a>
 </article>
 
 <section class="options-container" style="display: none">
