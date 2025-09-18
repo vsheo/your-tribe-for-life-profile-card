@@ -7,7 +7,6 @@
   * [Gebruik](#gebruik)
   * [svelte structuur](#svelte-structuur)
   * [Functionaliteiten](#Functionaliteiten)
-  * [Functionaliteiten uitleg in wiki](#Functionaliteiten-uitleg-in-wiki)
   * [Code conventies](#Code-conventies)
   * [Installatie](#installatie)
   * [Bronnen](#bronnen)
@@ -80,7 +79,7 @@ video veranderen van fonts
 
 - In deze style.css file zitten ook alle kleuren in classes. In deze classes hebben de custom properties dezelfde naam, maar allemaal met andere waarden. Deze classes worden aan de body toegevoegd om het kleuren palet van de pagina te veranderen https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2ffcba22a674b36170889a86/src/lib/assets/style.css#L26-L45
 - Om alle kleuren op de website te kunnen aanpassen, heb ik ervoor gezorgd dat in de CSS de color en background-color altijd aangegeven worden met custom properties. Hierdoor veranderen de kleuren automatisch wanneer er een andere kleuren class (palet) aan de body wordt toegevoegd
-  - classes op body https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2ffcba22a674b36170889a86/src/app.html#L10)
+  - classes op body https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2ffcba22a674b36170889a86/src/app.html#L10
   - voorbeeld custom property gebruik in CSS https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2ffcba22a674b36170889a86/src/routes/%2Bpage.svelte#L43-L51
 
 
@@ -88,14 +87,30 @@ Om deze style.css te gebruiken, wordt deze via JavaScript geimporteerd in `+layo
 Hierdoor kan de CSS die hierin staat op alle pagina's van de website worden gebruikt
 
 
-
 video veranderen van kleuren
 
+
 ### Component: Fieldset
+de fieldset component staat in [src/lib/Fieldset.svelte](https://github.com/vsheo/your-tribe-for-life-profile-card/blob/main/src/lib/components/Fieldset.svelte)
 
-#### Change color & fonts
+de fieldset krijgt data van `+page.svelte` mee, dit is waar de component wordt aangeroepen
+https://github.com/vsheo/your-tribe-for-life-profile-card/blob/83989d8174c5e73c9c2d7a99d5f119ec85f81955/src/routes/%2Bpage.svelte#L33-L39
 
-#### Color transition animation
+de data die meegestuurd wordt zijn alle id's die de input velden en labels van de fieldset nodig heeft.
+dit staat geschreven in een lokaal JSON bestant, die op `+page.svelte` opgehaald wordt met `import`
+- JSON https://github.com/vsheo/your-tribe-for-life-profile-card/blob/83989d8174c5e73c9c2d7a99d5f119ec85f81955/src/lib/assets/ChangeOptions.json#L1-L20
+- import https://github.com/vsheo/your-tribe-for-life-profile-card/blob/83989d8174c5e73c9c2d7a99d5f119ec85f81955/src/routes/%2Bpage.svelte#L3-L6
+
+in `+page.svelte` loop ik door de eerste array in de JSON data, zodat ik 2 fieldsets maak
+https://github.com/vsheo/your-tribe-for-life-profile-card/blob/83989d8174c5e73c9c2d7a99d5f119ec85f81955/src/routes/%2Bpage.svelte#L36-L38
+
+Nu kan ik `props` gebruiken om de data op te halen in de Fieldset component
+https://github.com/vsheo/your-tribe-for-life-profile-card/blob/83989d8174c5e73c9c2d7a99d5f119ec85f81955/src/lib/components/Fieldset.svelte#L2-L5
+
+en gebruiken om alle input velden en labels te genereren
+https://github.com/vsheo/your-tribe-for-life-profile-card/blob/83989d8174c5e73c9c2d7a99d5f119ec85f81955/src/lib/components/Fieldset.svelte#L57-L65
+
+
 
 ### Data ophalen
 De fetch voor het ophalen van data staat in +layout.server.js.
@@ -103,15 +118,6 @@ De fetch voor het ophalen van data staat in +layout.server.js.
 De opgehaalde data wordt gefilterd op mijn naam, GitHub handle, I Love Web link, bio en mugshot.
 Deze data wordt vervolgens als de variabele `person` doorgestuurd naar de pagina's
 https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2ffcba22a674b36170889a86/src/routes/%2Blayout.server.js#L2-L7
-
-
-
-
-## Functionaliteiten uitleg in wiki
-- Styleguide
-- Component: Fieldset
-  - Change color & fonts
-  - Color transition animation
 
 
 
@@ -137,8 +143,6 @@ https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2
 - als een element een speudo class heeft, dan wordt deze bij het element genest
   - voorbeeld: https://github.com/vsheo/your-tribe-for-life-profile-card/blob/b3e1a4b4e5996045cecf43c64a00271e27ac5851/src/lib/components/Fieldset.svelte#L99-L116
 - nesten in CSS gaat niet verder dan 3 niveaus diep
-
-
 
 
 
