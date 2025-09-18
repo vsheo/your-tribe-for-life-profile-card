@@ -5,10 +5,11 @@
 
   * [Beschrijving](#beschrijving)
   * [Gebruik](#gebruik)
-  * [Kenmerken](#kenmerken)
+  * [svelte structuur](#svelte-structuur)
+  * [Functionaliteiten](#Functionaliteiten)
+  * [Functionaliteiten uitleg in wiki](#Functionaliteiten-uitleg-in-wiki)
   * [Code conventies](#Code-conventies)
   * [Installatie](#installatie)
-  * [Uitleg van code](#Uitleg-van-code)
   * [Bronnen](#bronnen)
   * [Licentie](#licentie)
 
@@ -32,9 +33,8 @@ Op de website kan de gebruiker mijn bio lezen en zijn er links naar mijn GitHub 
 ## video transition
 ## video bounce
 
-## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
 
+## svelte structuur
 ### HTML
 De HTML is opgesplitst in +layout.svelte, +page.svelte en een component.
 - In +layout.svelte staat alleen de HTML voor de header en de main.
@@ -50,14 +50,78 @@ De CSS staat in de bijbehorende bestanden:
 ### JavaScript
 JavaScript heb ik alleen gebruikt voor het veranderen van kleuren en fonts, en dit staat in het component zelf geschreven. Wanneer JavaScript uitstaat, worden de fieldsets niet weergegeven.
 
+## Functionaliteiten
+<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
+
+
+## Functionaliteiten
+### Responsiveness
+De website is responsive voor apparaten met een schermbreedte vanaf 320px.
+- De profiel kaart heeft een max width. Op kleinere schermen wordt ze kleiner weergegeven, terwijl ze op een laptop wat breder is
+- De 'change the page' sectie is opgebouwd met een grid dat gebruik maakt van auto columns. Hierdoor wordt er vanzelf een tweede kolom aangemaakt zodra er ruimte is. Daardoor is er geen media query nodig om deze sectie responsive te maken
+https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2ffcba22a674b36170889a86/src/routes/%2Bpage.svelte#L121-L124
+- De fieldsets hebben een clamp op de width en height, waardoor ze op grotere schermen automatisch iets breder en langer worden
+https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2ffcba22a674b36170889a86/src/lib/components/Fieldset.svelte#L78-L79
+
+Responsive video:
+
+### Styleguide
+De styleguide zit in [src/lib/assets/style.css](https://github.com/vsheo/your-tribe-for-life-profile-card/blob/main/src/lib/assets/style.css)
+
+- In deze stylesheet is er een reset op marges en paddings
+
+- Daarnaast zijn alle font-families, font-sizes, font-weight en line-heights als custom properties aangegeven
+  - custom properties https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2ffcba22a674b36170889a86/src/lib/assets/style.css#L12-L22
+  - font-face https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2ffcba22a674b36170889a86/src/lib/assets/style.css#L48-L70
+  - Om deze fonts op de website te gebruiken, heb ik classes aangemaakt. Afhankelijk van welke class op de body staat, verandert het font van alle tekst op de website https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2ffcba22a674b36170889a86/src/lib/assets/style.css#L73-L89
+
+video veranderen van fonts
+
+
+- In deze style.css file zitten ook alle kleuren in classes. In deze classes hebben de custom properties dezelfde naam, maar allemaal met andere waarden. Deze classes worden aan de body toegevoegd om het kleuren palet van de pagina te veranderen https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2ffcba22a674b36170889a86/src/lib/assets/style.css#L26-L45
+- Om alle kleuren op de website te kunnen aanpassen, heb ik ervoor gezorgd dat in de CSS de color en background-color altijd aangegeven worden met custom properties. Hierdoor veranderen de kleuren automatisch wanneer er een andere kleuren class (palet) aan de body wordt toegevoegd
+  - classes op body https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2ffcba22a674b36170889a86/src/app.html#L10)
+  - voorbeeld custom property gebruik in CSS https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2ffcba22a674b36170889a86/src/routes/%2Bpage.svelte#L43-L51
+
+
+Om deze style.css te gebruiken, wordt deze via JavaScript geimporteerd in `+layout.svelte` https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2ffcba22a674b36170889a86/src/routes/%2Blayout.svelte#L1-L6
+Hierdoor kan de CSS die hierin staat op alle pagina's van de website worden gebruikt
+
+
+
+video veranderen van kleuren
+
+### Component: Fieldset
+
+#### Change color & fonts
+
+#### Color transition animation
+
+### Data ophalen
+De fetch voor het ophalen van data staat in +layout.server.js.
+
+De opgehaalde data wordt gefilterd op mijn naam, GitHub handle, I Love Web link, bio en mugshot.
+Deze data wordt vervolgens als de variabele `person` doorgestuurd naar de pagina's
+https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2ffcba22a674b36170889a86/src/routes/%2Blayout.server.js#L2-L7
+
+
+
+
+## Functionaliteiten uitleg in wiki
+- Styleguide
+- Component: Fieldset
+  - Change color & fonts
+  - Color transition animation
+
+
 
 ## Code conventies
 ### naamgeving
 - Namen zijn zo kort mogelijk, maar nog steeds beschrijvend waarvoor het bedoeld is
   - bijvoorbeeld: dit is voor de primary font size `--fs-primary`
-- Voor CSS gebruik ik kebak case (een streep na elk woord)
+- Voor CSS gebruik ik kebab case (een streep na elk woord)
 - Voor JavaScript gebruik ik camelCase (elk nieuw woord met een hoofdletter)
-- Voor componenten gebruik ik eerste letter van het woord een hoofdletter
+- Voor componenten maak ik de eerste letter van het woord tot een hoofdletter
 
 ### HTML
 - In HTML worden block elementen als blok geschreven
@@ -68,7 +132,7 @@ JavaScript heb ik alleen gebruikt voor het veranderen van kleuren en fonts, en d
 
 ### CSS
 - CSS selectors hebben dezelfde volgorde als de HTML structuur
-- als het HTML element een block element is, dan zijn alle children in CSS genest
+- als het HTML element een block element is, dan zijn alle child elementen in CSS genest
   - voorbeeld: https://github.com/vsheo/your-tribe-for-life-profile-card/blob/b3e1a4b4e5996045cecf43c64a00271e27ac5851/src/routes/%2Bpage.svelte#L43-L119
 - als een element een speudo class heeft, dan wordt deze bij het element genest
   - voorbeeld: https://github.com/vsheo/your-tribe-for-life-profile-card/blob/b3e1a4b4e5996045cecf43c64a00271e27ac5851/src/lib/components/Fieldset.svelte#L99-L116
@@ -90,15 +154,6 @@ Hier moet je dan eerst ```npm install``` uitvoeren in de terminal.
 
 als dat af is kan je het project op localhost opstarten met:
 ```npm run dev```
-
-
-## Uitleg van code in wiki
-- Responsiveness
-- Styleguide
-- Component: Fieldset
-  - Change color & fonts
-  - Color transition animation
-- Data ophalen
 
 
 ## Bronnen
