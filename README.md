@@ -167,6 +167,8 @@ als dat af is kan je het project op localhost opstarten met:
 
 
 ## Bronnen
+- [CSS mask animatie](https://codepen.io/pizza3/pen/qmerBv?editors=1100)
+
 
 ## Licentie
 
