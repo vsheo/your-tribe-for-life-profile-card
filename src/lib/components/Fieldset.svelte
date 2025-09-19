@@ -65,6 +65,10 @@
 </form>
 
 <style>
+form {
+    place-self: center;
+}
+
 fieldset {
     display: flex;
     flex-direction: column;

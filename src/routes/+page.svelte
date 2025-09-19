@@ -131,9 +131,5 @@
         text-align: center;
         grid-column: 1/-1;
     }
-
-    form {
-        place-self: center;
-    }
 }
 </style>
