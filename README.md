@@ -29,8 +29,15 @@ QR code naar de live site:
 <!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
 Op de website kan de gebruiker mijn bio lezen en zijn er links naar mijn GitHub page en de I Love Web website. Als interactie, om te laten zien wat ik kan maken, heb ik drie opties toegevoegd om de kleur van de website te veranderen en drie opties om de font aan te passen. Bij het veranderen van het lettertype speelt een transition animatie af. En wanneer de gebruiker na 10 seconden niet op een van de opties klikt, krijgt de container een bounce animatie om de aandacht van de gebruiker te trekken.
 
-## video transition
-## video bounce
+### Font veranderen:
+[font-veranderen.webm](https://github.com/user-attachments/assets/17f15980-ee56-4710-a7da-b88603f150c4)
+
+### Kleur veranderen:
+[Color-Transition.webm](https://github.com/user-attachments/assets/2a55b61b-0f85-4018-a98b-863f80aba34f)
+
+### bounce animatie:
+[Form-Bounce.webm](https://github.com/user-attachments/assets/b4ee077c-7937-4e76-b904-cb42525ff79c)
+
 
 
 ## svelte structuur
@@ -63,6 +70,8 @@ https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2
 https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2ffcba22a674b36170889a86/src/lib/components/Fieldset.svelte#L78-L79
 
 Responsive video:
+[Responsive.webm](https://github.com/user-attachments/assets/df560f51-de02-49e3-b1d2-bb9b10ebef65)
+
 
 ### Styleguide
 De styleguide zit in [src/lib/assets/style.css](https://github.com/vsheo/your-tribe-for-life-profile-card/blob/main/src/lib/assets/style.css)
@@ -74,7 +83,6 @@ De styleguide zit in [src/lib/assets/style.css](https://github.com/vsheo/your-tr
   - font-face https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2ffcba22a674b36170889a86/src/lib/assets/style.css#L48-L70
   - Om deze fonts op de website te gebruiken, heb ik classes aangemaakt. Afhankelijk van welke class op de body staat, verandert het font van alle tekst op de website https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2ffcba22a674b36170889a86/src/lib/assets/style.css#L73-L89
 
-video veranderen van fonts
 
 
 - In deze style.css file zitten ook alle kleuren in classes. In deze classes hebben de custom properties dezelfde naam, maar allemaal met andere waarden. Deze classes worden aan de body toegevoegd om het kleuren palet van de pagina te veranderen https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2ffcba22a674b36170889a86/src/lib/assets/style.css#L26-L45
@@ -86,8 +94,6 @@ video veranderen van fonts
 Om deze style.css te gebruiken, wordt deze via JavaScript geimporteerd in `+layout.svelte` https://github.com/vsheo/your-tribe-for-life-profile-card/blob/5047f39e140a90cb2ffcba22a674b36170889a86/src/routes/%2Blayout.svelte#L1-L6
 Hierdoor kan de CSS die hierin staat op alle pagina's van de website worden gebruikt
 
-
-video veranderen van kleuren
 
 
 ### Component: Fieldset
